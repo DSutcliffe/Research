@@ -24,9 +24,7 @@ class ViewController: UIViewController {
             print("Result: \(result)")
         }
         
-        Service.grabDataFromDatabaseC { result in
-            print("Result: \(result)")
-        }
+//        Service.grabDataFromDatabaseC(completion: nil)
     }
 
 }

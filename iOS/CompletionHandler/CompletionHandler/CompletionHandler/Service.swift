@@ -9,17 +9,18 @@ import UIKit
 
 class Service {
     
-    static func grabDataFromDatabaseA(completion: @escaping () -> ()) {
+//    static func grabDataFromDatabaseA(completion: @escaping () -> ()) {   // () -> () second () means Void
+    static func grabDataFromDatabaseA(completion: @escaping () -> Void) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            let result = 1
+            
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 completion()
             }
         }
     }
     
-    static func grabDataFromDatabaseB(completion: @escaping (_ result: Int) -> ()) {
+    static func grabDataFromDatabaseB(completion: @escaping (_ result: Int) -> Void) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
             let result = 1
@@ -29,12 +30,12 @@ class Service {
         }
     }
     
-    static func grabDataFromDatabaseC(completion: @escaping (_ result: Int) -> Void) {
+    static func grabDataFromDatabaseC(completion: @escaping (_ result: Int?) -> Void) {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(7)) {
-            let result = 2
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+            
             DispatchQueue.main.asyncAfter(deadline: .now()) {
-                completion(result)
+                completion(nil)
             }
         }
     }
