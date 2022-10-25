@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         /// "set" will run as a value has been set
         iPhone7.priceWithTax = 20
-        
+        print(iPhone7.priceWithTax)
     }
 
 
